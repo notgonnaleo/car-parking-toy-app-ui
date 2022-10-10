@@ -1,0 +1,22 @@
+<div>
+    <table>
+        <tr>
+          <% for(var i = 0; i < tableVeiculos.length; i++){ %>
+            <th><%= tableVeiculos[i] %></th>
+          <% } %>  
+        </tr>
+        
+        <% for(var i = 0; i < ListagemVeiculos.length; i++){ %>
+          <tr>
+            <td><%= ListagemVeiculos[i].id_veiculo %></td>
+            <td><%= ListagemVeiculos[i].data_cadastro %></td>
+            <td><%= ListagemVeiculos[i].id_placa %></td>
+            <td><%= ListagemVeiculos[i].id_cor %></td>
+            <td><%= ListagemVeiculos[i].km %></td>
+            <td><%= ListagemVeiculos[i].id_modelo %></td>
+          </tr>
+        <% } %>  
+
+        
+      </table>
+</div>
