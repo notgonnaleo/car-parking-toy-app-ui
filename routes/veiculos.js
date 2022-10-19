@@ -12,15 +12,20 @@ router.get('/ListagemVeiculos', async ( req, res, next ) =>
     try
     {
         var Veiculos = await veiculosController.ListagemVeiculos(req, res);
-
-        var tableVeiculos = ["id_veiculo",
-                            "data_cadastro",
-                            "id_placa",
-                            "id_cor",
-                            "km",
-                            "id_modelo"]
+        var Modelos = await veiculosController.ListagemModelos(req, res);
+        var Cores = await veiculosController.ListagemCores(req, res);
+        
+        var tableVeiculos = [
+                            "Número da Placa",
+                            "Modelo do Veículo",
+                            "Cor do Veículo",
+                            "Data do Cadastro",
+                            "Quilometragem"
+                            ]
 
         res.render(viewpath+'/Veiculos/veiculos', {
+            ListagemModelos: Modelos,
+            ListagemCores: Cores,
             ListagemVeiculos: Veiculos,
             tableVeiculos: tableVeiculos
         });

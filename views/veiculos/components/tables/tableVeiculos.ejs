@@ -1,0 +1,28 @@
+<div class="datatable flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+        <thead class="bg-white border-b">
+        <tr>
+          <% for(var i = 0; i < tableVeiculos.length; i++){ %>
+            <th scope="col" class="datatable-title text-sm font-medium text-gray-900 px-6 py-4"><%= tableVeiculos[i] %></th>
+          <% } %>  
+        </tr>
+        </thead>
+        <tbody>
+          <% for(var i = 0; i < ListagemVeiculos.length; i++){ %>
+          <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].numero_placa %></td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].descricao_modelo %></td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].nome_cor %></td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].data_cadastro %></td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].km %></td>
+          </tr>
+        <% } %>  
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</div>
