@@ -1,28 +1,57 @@
-<div class="datatable flex flex-col">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table class="min-w-full">
-        <thead class="bg-white border-b">
-        <tr>
-          <% for(var i = 0; i < tableVeiculos.length; i++){ %>
-            <th scope="col" class="datatable-title text-sm font-medium text-gray-900 px-6 py-4"><%= tableVeiculos[i] %></th>
-          <% } %>  
-        </tr>
-        </thead>
-        <tbody>
-          <% for(var i = 0; i < ListagemVeiculos.length; i++){ %>
-          <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].numero_placa %></td>
-            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].descricao_modelo %></td>
-            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].nome_cor %></td>
-            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].data_cadastro %></td>
-            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= ListagemVeiculos[i].km %></td>
-          </tr>
-        <% } %>  
-        </tbody>
-      </table>
-      </div>
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
     </div>
-  </div>
+
+    <%- include("../../components/form/formVeiculo.ejs") %>
+
+        <div class="table-responsive pt-4">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dataTables_length" id="dataTable_length">
+                            <label>Show 
+                                <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
+                                    <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option>
+                                </select> entries</label>
+                            </div>
+                        </div>
+            <div class="col-sm-12 col-md-6">
+                <div id="dataTable_filter" class="dataTables_filter text-right">
+                    <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                </div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                <thead>
+                    <tr role="row">
+                    <% for(var i = 0; i < tableVeiculos.length; i++){ %>
+                        <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 128px;">
+                            <%= tableVeiculos[i] %>
+                        </th>
+                    <% }%>                                  
+                    </tr>
+                </thead>
+
+                <!-- Label footer tablename -->
+                <!-- <tfoot>
+                    <tr>
+                    <%# for(var i = 0; i < tableVeiculos.length; i++){ %>
+                      <th rowspan="1" colspan="1"><%= tableVeiculos[i] %></th>
+                    <%# } %>                                  
+                    </tr>
+                </tfoot> -->
+
+                <tbody>
+                <% for(var i = 0; i < ListagemVeiculos.length; i++){ %>
+                <tr class="odd">
+                        <td><%= ListagemVeiculos[i].numero_placa %></td>
+                        <td><%= ListagemVeiculos[i].descricao_modelo %></td>
+                        <td><%= ListagemVeiculos[i].nome_cor %></td>
+                        <td><%= ListagemVeiculos[i].data_cadastro %></td>
+                        <td><%= ListagemVeiculos[i].km %></td>
+                    </tr>
+                    <% } %>  
+                </tbody>
+            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+        </div>
+    </div>
 </div>

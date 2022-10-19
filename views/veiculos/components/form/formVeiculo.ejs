@@ -1,32 +1,12 @@
-<div class="card">
-    <form>
-        <div class="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700">Modelo do Veículo</label>
-                    <select class="js-example-basic-single" name="state">
-                    <%- include("../../components/select/selectModelo.ejs", { ListagemModelos : ListagemModelos }) %>
-                    </select>
-                </div>
-            <div>
-                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700">Cor do Veículo</label>
-                <select class="js-example-basic-single" name="state">
-                <%- include("../../components/select/selectCor.ejs", { ListagemCores : ListagemCores }) %>
-                </select>
-            </div>
-            <div>
-                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700">Quilometragem do Veículo</label>
-                <input type="text" id="company" class=" field" placeholder="Km" required>
-            </div>
-            <div>
-                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700">Placa</label>
-                <input type="text" id="company" class=" field" placeholder="XXX123 ou XXX1X23" required>
-            </div>  
-        </div>
-        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          <i class="fa-solid fa-plus"></i>
-            Adicionar
-        </button>
-    </form>
+<div class="card-body">
+    <div class="form-group">
+        <select class="js-example-basic-single" name="state">
+            <%- include("../../components/select/selectCor.ejs", { ListagemCores : ListagemCores }) %>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+    </div>
 </div>
 
 <script>

@@ -4,9 +4,19 @@
     <%- include("../../layout/head.ejs") %>
     <title>Dashboard</title>
 </head>
-<body>
-    <%- include("../../layout/header.ejs") %>
-    <%- include("../../layout/navbar.ejs") %>
-    <%- include("./partials/cardV1.ejs") %>
+<body id="page-top">
+    <div id="wrapper">
+        <%- include("../../layout/navbar.ejs") %>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <%- include("../../layout/topbar.ejs") %>
+                <%- include("./partials/cardV1.ejs") %>
+            </div>
+            <%- include("../../layout/footer.ejs") %>
+        </div>
+    </div>
+    <%- include("../../layout/required-content.ejs") %>
 </body>
 </html>
