@@ -1,13 +1,25 @@
-<div class="card-body">
-    <div class="form-group">
-        <select class="js-example-basic-single" name="state">
-            <%- include("../../components/select/selectCor.ejs", { ListagemCores : ListagemCores }) %>
-        </select>
+<form action="/Veiculos/NovoVeiculo" method="POST">
+    <div class="card-body">
+        
+        <div class="form-group">
+            <select class="js-example-basic-single" name="state">
+                <%- include("../../components/select/selectCor.ejs", { ListagemCores : ListagemCores }) %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="text" 
+            name="km" 
+            class="form-control form-control-user" 
+            id="km" aria-describedby="emailHelp" 
+            placeholder="Km/h (Nao esta funcionando)">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Enviar</button>
+        </div>
     </div>
-    <div class="form-group">
-        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-    </div>
-</div>
+</form>
 
 <script>
     $(document).ready(function() {
